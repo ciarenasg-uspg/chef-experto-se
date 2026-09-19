@@ -127,3 +127,67 @@
    (assert
       (categoria-disponible fruta))
 )
+
+
+
+; ============================================================
+; semana10 reglas
+; ============================================================
+(defrule sin-ingredientes
+   (declare (salience 200))
+   (solicitud (tipo ?tipo))
+   (not (ingrediente))
+   (not (resultado))
+   =>
+   (assert
+      (resultado
+         (tipo ninguno)
+         (ingredientes)
+         (mensaje "No es posible recomendar un desayuno.")
+         (justificacion "No se proporcionaron ingredientes disponibles.")
+         (regla "sin-ingredientes")
+         (faltantes ingrediente)
+      )
+   )
+)
+
+(defrule ligero-proteina-carbohidrato
+   (declare (salience 80))
+   (solicitud (tipo ligero))
+   (ingrediente (nombre ?proteina) (categoria proteina))
+   (ingrediente (nombre ?carbohidrato) (categoria carbohidrato))
+   (not (resultado))
+   =>
+   (assert
+      (resultado
+         (tipo ligero)
+         (ingredientes ?proteina ?carbohidrato)
+         (mensaje "Se recomienda un desayuno ligero de proteína y carbohidrato.")
+         (justificacion "Se seleccionó una combinación de proteína y carbohidrato disponible.")
+         (regla "ligero-proteina-carbohidrato")
+         (faltantes)
+      )
+   )
+)
+
+(defrule ligero-un-ingrediente
+   (declare (salience 10))
+   (solicitud (tipo ligero))
+   (ingrediente (nombre ?ingrediente) (categoria ?categoria))
+   (not (resultado))
+   =>
+   (assert
+      (resultado
+         (tipo ligero)
+         (ingredientes ?ingrediente)
+         (mensaje "Solo es posible recomendar un desayuno ligero con un ingrediente.")
+         (justificacion "No existen suficientes categorías para formar una combinación.")
+         (regla "ligero-un-ingrediente")
+         (faltantes)
+      )
+   )
+)
+
+; ============================================================
+; semana 10 reglas end
+; ============================================================

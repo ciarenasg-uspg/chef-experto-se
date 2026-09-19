@@ -54,8 +54,41 @@ el sistema recomienda una combinación de desayuno ligero.
 ## Instalación
 
 Crear entorno virtual:
-
-```bash
 python -m venv .venv
-
 pip install -r backend/requirements.txt
+
+
+
+# CHEFEXPERTO - Backend Semana 10
+## Estructura
+backend/
+  __init__.py
+  main.py
+  modelos.py
+  motor_experto.py
+  conocimiento.clp
+  requirements.txt
+
+## Ejecutar
+Desde la carpeta que contiene `backend`:
+uvicorn backend.main:app --reload
+
+## Probar sin frontend
+Abrir:
+http://127.0.0.1:8000/docs
+
+En Swagger:
+POST /api/v1/recomendar
+
+Ejemplo:
+{
+  "tipo_desayuno": "completo",
+  "ingredientes": ["huevo", "cafe", "pan"]
+}
+
+También:
+GET /api/v1/health
+GET /api/v1/ingredientes
+
+## Idea central
+FastAPI recibe JSON -> Python prepara hechos -> clipspy ejecuta CLIPS -> CLIPS aplica reglas -> Python devuelve JSON.
