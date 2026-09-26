@@ -92,3 +92,12 @@ GET /api/v1/ingredientes
 
 ## Idea central
 FastAPI recibe JSON -> Python prepara hechos -> clipspy ejecuta CLIPS -> CLIPS aplica reglas -> Python devuelve JSON.
+
+
+# CHEFEXPERTO - Frontend
+## Estructura
+
+frontend/
+  app.js
+  index.html
+  style.css
