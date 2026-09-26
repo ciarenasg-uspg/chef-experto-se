@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ChefExperto</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <header class="encabezado">
+
+            <div class="icono-chef">
+                🍳
+            </div>
+
+            <h1>
+                ChefExperto
+            </h1>
+
+            <p>
+                Sistema experto para selección de desayunos
+            </p>
+
+        </header>
+
+
+        <section class="tarjeta">
+
+            <h2>
+                1. ¿Qué tipo de desayuno desea?
+            </h2>
+
+            <div 
+            id = "desayunoContainer"
+            class="opciones-desayuno">
+
+                <label class="opcion-desayuno">
+
+                    <input
+                        type="radio"
+                        name="tipoDesayuno"
+                        value="completo"
+                        checked
+                    >
+
+                    <span>
+                        Desayuno completo
+                    </span>
+
+                    <small>
+                        Proteína + bebida + carbohidrato
+                    </small>
+
+                </label>
+
+
+                <label class="opcion-desayuno">
+
+                    <input
+                        type="radio"
+                        name="tipoDesayuno"
+                        value="ligero"
+                    >
+
+                    <span>
+                        Desayuno ligero
+                    </span>
+
+                    <small>
+                        Combinación de ingredientes disponibles
+                    </small>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <section class="tarjeta">
+
+            <h2>
+                2. Seleccione sus ingredientes
+            </h2>
+
+            <div
+                id="ingredientesContainer"
+                class="ingredientes-container"
+            >
+
+                <p>
+                    Cargando ingredientes...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="acciones">
+
+            <button
+                id="btnAnalizar"
+                class="btn-principal"
+            >
+                Analizar desayuno
+            </button>
+
+            <button
+                id="btnLimpiar"
+                class="btn-secundario"
+            >
+                Limpiar
+            </button>
+
+        </section>
+
+
+        <section
+            id="resultado"
+            class="tarjeta resultado oculto"
+        >
+
+            <h2>
+                Resultado del sistema experto
+            </h2>
+
+            <div id="resultadoContenido"></div>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                ChefExperto — CLIPS + clipspy + FastAPI
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
