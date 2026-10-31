@@ -103,7 +103,8 @@ frontend/
   style.css
 
 
-Ejecución de pruebas
+# Pruebas
+## Ejecución de pruebas
 
 El proyecto utiliza pytest para ejecutar pruebas automatizadas y verificar el funcionamiento del motor experto.
 
