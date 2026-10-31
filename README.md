@@ -101,3 +101,30 @@ frontend/
   app.js
   index.html
   style.css
+
+
+Ejecución de pruebas
+
+El proyecto utiliza pytest para ejecutar pruebas automatizadas y verificar el funcionamiento del motor experto.
+
+1. Instalar las dependencias
+
+Desde la raíz del proyecto, ejecutar:
+
+pip install -r requirements.txt
+
+Asegúrate de que pytest esté instalado en el entorno de Python que utilizarás.
+
+2. Ejecutar las pruebas
+
+Desde la raíz del proyecto (breakfast-se), ejecutar:
+
+python -m pytest -v
+
+Este comando permite:
+
+Descubrir y ejecutar las pruebas ubicadas en la carpeta tests/.
+
+Mostrar el resultado de cada prueba.
+
+Identificar cuáles pruebas finalizaron correctamente (PASSED) y cuáles fallaron (FAILED).
